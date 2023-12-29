@@ -7,6 +7,6 @@ import { environment } from '../../../environments/environment.development';
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
-  title = 'Gran-Clovisimo';
   currentApplicationVersion = environment.appVersion;
+  title = 'Gran-Clovisimo '+this.currentApplicationVersion;
 }
