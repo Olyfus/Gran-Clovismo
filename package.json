@@ -1,14 +1,18 @@
 {
   "name": "gran-clovisimo",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "prebuild": "npm --no-git-tag-version version patch",
+    "start": "npm i && ng serve --host 0.0.0.0",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "paddocks": "npm run build && npm run start"
+    "update-major": "npm --no-git-tag-version version major",
+    "update-minor": "npm --no-git-tag-version version minor",
+    "update-patch": "npm --no-git-tag-version version patch",
+    "paddocks": "npm run update-patch && npm run start",
+    "qualif": "npm run update-minor && npm run start",
+    "championnat": "npm run update-major && npm run start"
   },
   "private": true,
   "dependencies": {
