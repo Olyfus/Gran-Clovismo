@@ -21,15 +21,9 @@ export class HomeComponent {
   ngOnInit() {
     this.round = Dice.getInstance().action;
     this.v1 = new VoitureObj;
-    this.round.rollDice(this.v1.vitesse);
-    this.v1.upShift();
-    this.round.rollDice(this.v1.vitesse);
-    this.v1.upShift();
-    this.round.rollDice(this.v1.vitesse);
-    this.v1.upShift();
-    this.round.rollDice(this.v1.vitesse);
-    this.v1.upShift();
-    this.round.rollDice(this.v1.vitesse);
+    for (let i = 0; i < 6; i++) {
+      this.round.rollDice(this.v1.vitesse);
+      this.v1.upShift();
+    }
   }
-
 }

@@ -2,6 +2,7 @@ import { IVoiture } from './../interfaces/voiture.interface';
 import { gearboxEnum } from "../enums/gearbox.enums";
 import { tireType } from "../enums/tireType.enum";
 import { Component } from '@angular/core';
+import { GearboxService } from '../services/gearbox.services';
 
 const testCar: IVoiture = {
     viePneu: 3,
@@ -11,7 +12,7 @@ const testCar: IVoiture = {
     essence: 3,
     moteur: 3,
     typePneu: tireType.tendre,
-    vitesse: gearboxEnum.un
+    vitesse: gearboxEnum.neutre
 };
 
 
@@ -24,9 +25,11 @@ export class VoitureObj implements IVoiture {
     moteur!: number;
     typePneu!: tireType;
     vitesse!: gearboxEnum;
+    gearBoxFunction: GearboxService;
 
     constructor() {
-        this.selectVoiture(testCar)
+        this.selectVoiture(testCar);
+        this.gearBoxFunction = new GearboxService;
     }
 
     private setViePneu(amount: number): void {
@@ -86,40 +89,26 @@ export class VoitureObj implements IVoiture {
     }
 
     upShift(): void {
-        switch (this.vitesse) {
-            case gearboxEnum.un:
-                this.vitesse = gearboxEnum.deux;
-                console.log("Upshift " + this.vitesse + "!");
-                break;
-            case gearboxEnum.deux:
-                this.vitesse = gearboxEnum.trois;
-                console.log("Upshift " + this.vitesse + "!");
-                break;
-            case gearboxEnum.trois:
-                this.vitesse = gearboxEnum.quatre;
-                console.log("Upshift " + this.vitesse + "!");
-                break;
-            case gearboxEnum.quatre:
-                this.vitesse = gearboxEnum.cinq;
-                console.log("Upshift " + this.vitesse + "!");
-                break;
-            case gearboxEnum.cinq:
-                this.vitesse = gearboxEnum.six;
-                console.log("Upshift " + this.vitesse + "!");
-                break;
-            case gearboxEnum.six:
-                console.error("no 7 gear");
-                break;
-            default:
-                console.log("tried to upshift whil clutched");
-        }
+        this.vitesse = this.gearBoxFunction.upShift(this.vitesse);
     }
 
     downShift(quantity: number): void {
+        if (quantity > 5) {
+            quantity = 5
+        } else if (quantity < 1 || quantity == null || quantity == undefined) {
+            quantity = 1
+        }
         switch (this.vitesse) {
             case gearboxEnum.un:
+                switch (quantity) {
+                    default:
+                }
+                break;
+            case gearboxEnum.deux:
+                break;
 
         }
+
     }
 
     selectVoiture(voiture: IVoiture) {

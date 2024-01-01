@@ -4,5 +4,6 @@ export enum gearboxEnum {
     trois,
     quatre,
     cinq,
-    six
+    six,
+    neutre
 }

@@ -12,5 +12,8 @@ export interface IVoiture {
     typePneu: tireType;
     vitesse: gearboxEnum;
 
-
+    ecurie?: string;
+    pilote?: string;
+    couleurP?: string;
+    couleurS?: string;
 }
