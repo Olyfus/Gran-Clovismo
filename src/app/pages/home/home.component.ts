@@ -1,9 +1,7 @@
 import { Dice } from './../../common/singletons/dice.singleton';
 import { Component } from '@angular/core';
 import { environment } from '../../../environments/environment.development';
-import { IVoiture } from '../../common/interfaces/voiture.interface';
 import { gearboxEnum } from '../../common/enums/gearbox.enums';
-import { tireType } from '../../common/enums/tireType.enum';
 import { VoitureObj } from '../../common/objects/voiture.object';
 
 @Component({
@@ -21,9 +19,21 @@ export class HomeComponent {
   ngOnInit() {
     this.round = Dice.getInstance().action;
     this.v1 = new VoitureObj;
-    for (let i = 0; i < 6; i++) {
-      this.round.rollDice(this.v1.vitesse);
-      this.v1.upShift();
-    }
+  }
+
+  clickUp() {
+    this.v1.upShift();
+    this.rollWithCarGearbox(this.v1.getGear());
+    console.log("Essence :" + this.v1.getFuel());
+  }
+
+  clickDown(select: number) {
+    this.v1.downShift(select);
+    this.rollWithCarGearbox(this.v1.getGear());
+    console.log("Essence :" + this.v1.getFuel());
+  }
+
+  rollWithCarGearbox(gear: gearboxEnum) {
+    this.round.rollDice(gear);
   }
 }

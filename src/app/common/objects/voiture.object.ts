@@ -1,125 +1,113 @@
 import { IVoiture } from './../interfaces/voiture.interface';
 import { gearboxEnum } from "../enums/gearbox.enums";
 import { tireType } from "../enums/tireType.enum";
-import { Component } from '@angular/core';
 import { GearboxService } from '../services/gearbox.services';
 
 const testCar: IVoiture = {
-    viePneu: 3,
-    frein: 3,
-    carrosserie: 3,
-    tenueRoute: 3,
-    essence: 3,
-    moteur: 3,
-    typePneu: tireType.tendre,
-    vitesse: gearboxEnum.neutre
+    tire: 3,
+    brake: 3,
+    body: 3,
+    grip: 3,
+    fuel: 3,
+    engine: 3,
+    tireType: tireType.tendre,
+    gear: gearboxEnum.neutre
 };
 
 
-export class VoitureObj implements IVoiture {
-    viePneu!: number;
-    frein!: number;
-    carrosserie!: number;
-    tenueRoute!: number;
-    essence!: number;
-    moteur!: number;
-    typePneu!: tireType;
-    vitesse!: gearboxEnum;
+export class VoitureObj {
+    private tire!: number;
+    private brake!: number;
+    private body!: number;
+    private grip!: number;
+    private fuel!: number;
+    private engine!: number;
+    private tireType!: tireType;
+    private gear!: gearboxEnum;
     gearBoxFunction: GearboxService;
+    ecurie?: string | undefined;
+    pilote?: string | undefined;
+    couleurP?: string | undefined;
+    couleurS?: string | undefined;
 
     constructor() {
         this.selectVoiture(testCar);
         this.gearBoxFunction = new GearboxService;
     }
 
-    private setViePneu(amount: number): void {
-        this.viePneu = amount;
+    settire(amount: number): void {
+        this.tire = amount;
     }
-    getViePneu(): number {
-        return this.viePneu;
-    }
-
-    private setFrein(amount: number): void {
-        this.frein = amount;
-    }
-    getFrein(): number {
-        return this.frein
+    gettire(): number {
+        return this.tire;
     }
 
-    private setCarrosserie(amount: number): void {
-        this.carrosserie = amount;
+    setBrake(amount: number): void {
+        this.brake = amount;
     }
-    getCarrosserie(): number {
-        return this.carrosserie
-    }
-
-    private setTenueRoute(amount: number): void {
-        this.tenueRoute = amount;
-    }
-    getTenueRoute(): number {
-        return this.tenueRoute;
+    getBrake(): number {
+        return this.brake
     }
 
-    private setEssence(amount: number): void {
-        this.essence = amount;
+    setBody(amount: number): void {
+        this.body = amount;
     }
-    getEssence(): number {
-        return this.essence;
-    }
-
-    private setMoteur(amount: number): void {
-        this.moteur = amount
-    }
-    getMoteur(): number {
-        return this.moteur;
+    getBody(): number {
+        return this.body
     }
 
-    private setTypePneu(type: tireType): void {
-        this.typePneu = type;
+    setGrip(amount: number): void {
+        this.grip = amount;
     }
-    getTypePneu(): tireType {
-        return this.typePneu;
+    getGrip(): number {
+        return this.grip;
     }
 
-    private setVitesse(gear: gearboxEnum) {
-        this.vitesse = gear;
+    setFuel(amount: number): void {
+        this.fuel = amount;
     }
-    getVitesse(): gearboxEnum {
-        return this.vitesse
+    getFuel(): number {
+        return this.fuel;
+    }
+
+    setEngine(amount: number): void {
+        this.engine = amount
+    }
+    getEngine(): number {
+        return this.engine;
+    }
+
+    setTireType(type: tireType): void {
+        this.tireType = type;
+    }
+    getTireType(): tireType {
+        return this.tireType;
+    }
+
+    setGear(gear: gearboxEnum) {
+        this.gear = gear;
+    }
+    getGear(): gearboxEnum {
+        return this.gear
     }
 
     upShift(): void {
-        this.vitesse = this.gearBoxFunction.upShift(this.vitesse);
+        this.gearBoxFunction.upShift(this);
     }
 
     downShift(quantity: number): void {
-        if (quantity > 5) {
-            quantity = 5
-        } else if (quantity < 1 || quantity == null || quantity == undefined) {
-            quantity = 1
-        }
-        switch (this.vitesse) {
-            case gearboxEnum.un:
-                switch (quantity) {
-                    default:
-                }
-                break;
-            case gearboxEnum.deux:
-                break;
-
-        }
-
+        this.gearBoxFunction.downShift(this, quantity);
     }
 
     selectVoiture(voiture: IVoiture) {
-        this.viePneu = voiture.viePneu;
-        this.frein = voiture.frein;
-        this.carrosserie = voiture.carrosserie;
-        this.tenueRoute = voiture.tenueRoute;
-        this.essence = voiture.essence;
-        this.moteur = voiture.moteur;
-        this.typePneu = voiture.typePneu;
-        this.vitesse = voiture.vitesse;
+        this.tire = voiture.tire;
+        this.brake = voiture.brake;
+        this.body = voiture.body;
+        this.grip = voiture.grip;
+        this.fuel = voiture.fuel;
+        this.engine = voiture.engine;
+        this.tireType = voiture.tireType;
+        this.gear = voiture.gear;
     }
 
 }
