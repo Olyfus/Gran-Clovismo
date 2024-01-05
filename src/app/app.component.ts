@@ -8,5 +8,5 @@ import { environment } from '../environments/environment.development';
 })
 export class AppComponent {
   currentApplicationVersion = environment.appVersion;
-  title = 'Gran Clovisimo '+this.currentApplicationVersion;
+  title = 'Gran Clovismo '+this.currentApplicationVersion;
 }

@@ -1,5 +1,8 @@
 <head>
     <title>{{title}}</title>
 </head>
-<router-outlet></router-outlet>
-<app-footer></app-footer>
+<div class="flex flex-col h-screen w-screen">
+    <router-outlet class="flex-auto overflow-auto"></router-outlet>
+    <app-footer></app-footer>
+
+</div>

@@ -35,10 +35,10 @@ export class VoitureObj {
         this.gearBoxFunction = new GearboxService;
     }
 
-    settire(amount: number): void {
+    setTire(amount: number): void {
         this.tire = amount;
     }
-    gettire(): number {
+    getTire(): number {
         return this.tire;
     }
 

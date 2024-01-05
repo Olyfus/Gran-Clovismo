@@ -1,4 +1,4 @@
-# Gran Clovisimo
+# Gran Clovismo
 
 Application angular, qui nous permet de faire de la COURSE MON GARS. ||bon pour l'instant c'est en dev donc c'est di la mierda||
 
@@ -18,11 +18,11 @@ Dans la finalité des choses, j'aimerais faire qu'on puisse joué à formule dé
 
 ## Mode Dev, Mode Prod
 
-Kézaco ? le Mode [Dev](https://github.com/Olyfus/Gran-Clovisimo/tree/dev) c'est simple, c'est la où sa peux claquer entre les doigts, la où sa peut faire des erreurs et des codes rouge de partout
+Kézaco ? le Mode [Dev](https://github.com/Olyfus/Gran-Clovismo/tree/dev) c'est simple, c'est la où sa peux claquer entre les doigts, la où sa peut faire des erreurs et des codes rouge de partout
 
-Le mode [Prod](https://github.com/Olyfus/Gran-Clovisimo/tree/master) ? l'inverse, on est sûr que ça marche mais on est sûr aussi qu'on a pas la dernière mise à jour
+Le mode [Prod](https://github.com/Olyfus/Gran-Clovismo/tree/master) ? l'inverse, on est sûr que ça marche mais on est sûr aussi qu'on a pas la dernière mise à jour
 
-En général vous allez pas voir de différence, c'est des branches du [GitHub](https://github.com/Olyfus/Gran-Clovisimo), donc faut faire des manipulations pour pouvoir voir la différence.
+En général vous allez pas voir de différence, c'est des branches du [GitHub](https://github.com/Olyfus/Gran-Clovismo), donc faut faire des manipulations pour pouvoir voir la différence.
 
 ## Schéma BDD
 

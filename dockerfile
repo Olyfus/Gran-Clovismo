@@ -24,7 +24,7 @@ RUN npm run build --prod
 FROM nginx:alpine
 
 # Copier les fichiers de l'application Angular depuis le conteneur de construction vers le répertoire Nginx
-COPY --from=0 /app/dist/gran-clovisimo /usr/share/nginx/html
+COPY --from=0 /app/dist/gran-clovismo /usr/share/nginx/html
 
 # Exposer le port 80
 EXPOSE 80

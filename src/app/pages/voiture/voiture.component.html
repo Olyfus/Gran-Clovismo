@@ -1,7 +1,20 @@
-<div>
-    <button (click)="clickUp()">Upshift</button>
-    <button (click)="clickDown(1)">Downshift 1</button>
-    <button (click)="clickDown(2)">Downshift 2</button>
-    <button (click)="clickDown(3)">Downshift 3</button>
-    <p>{{v1.getFuel()}}</p>
+<div class="h-full flex flex-col mb-16 gap-2 bg-red-500">
+    <div class="grid grid-cols-3 gap-4">
+        <div>
+            
+        </div>
+        <div>
+            <p>Fuel : {{v1.getFuel()}}</p>
+            <p>Tire : {{v1.getTireType()}}</p>
+            <p>Tyre : {{v1.getFuel()}}</p>
+
+        </div>
+        <div>
+            <button (click)="clickUp()">Upshift</button>
+            <button (click)="clickDown(1)">Downshift 1</button>
+            <button (click)="clickDown(2)">Downshift 2</button>
+            <button (click)="clickDown(3)">Downshift 3</button>
+
+        </div>
+    </div>
 </div>
