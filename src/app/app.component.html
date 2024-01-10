@@ -1,8 +1,19 @@
 <head>
     <title>{{title}}</title>
+    <!-- Google material  -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 </head>
-<div class="flex flex-col h-screen w-screen">
-    <router-outlet class="flex-auto overflow-auto"></router-outlet>
-    <app-footer></app-footer>
+<div class="flex flex-col h-screen md:pl-20">
 
+    <div class="flex-none">
+        <app-navbar></app-navbar>
+    </div>
+
+    <div class="flex-auto overflow-auto scrollbar-hide">
+        <router-outlet></router-outlet>
+    </div>
+
+    <app-footer class="flex-none mt-14 pt-2 md:hidden"></app-footer>
+    <app-menu-desk class="flex-none hidden md:block"></app-menu-desk>
 </div>

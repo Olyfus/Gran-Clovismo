@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { environment } from '../environments/environment.development';
+import { environment } from '../environments/environment.environment';
 
 @Component({
   selector: 'app-root',
@@ -8,5 +8,5 @@ import { environment } from '../environments/environment.development';
 })
 export class AppComponent {
   currentApplicationVersion = environment.appVersion;
-  title = 'Gran Clovismo '+this.currentApplicationVersion;
+  title = 'Gran Clovismo ' + this.currentApplicationVersion;
 }
