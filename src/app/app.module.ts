@@ -4,14 +4,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { PagesModule } from './common/modules/pages.modules';
+import { PagesModule } from './common/modules/pages.module';
 import { MenuDeskComponent } from './composants/menu-desk/menu-desk.component';
 import { NavbarComponent } from './composants/navbar/navbar.component';
 import { FooterComponent } from './composants/footer/footer.component';
-import { EcuriesComponent } from './pages/ecuries/ecuries.component';
-import { ClassementComponent } from './pages/classement/classement.component';
-import { CourseComponent } from './pages/course/course.component';
-import { ListeComponent } from './composants/course/liste/liste.component';
+import { ControlleurModule } from './common/modules/controlleur.module';
 
 @NgModule({
   declarations: [
@@ -25,6 +22,7 @@ import { ListeComponent } from './composants/course/liste/liste.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     PagesModule,
+    ControlleurModule,
   ],
   providers: [
 
