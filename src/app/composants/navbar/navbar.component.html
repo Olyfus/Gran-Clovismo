@@ -1,11 +1,15 @@
-<div class="flex flex-row text-white bg-white items-center shadow-lg sticky w-full ">
-    <div routerLink="/home" class=" p-1 w-2/6 justify-center md:order-2">
-        <img [src]="logoSrc" alt="logo" class="max-w-full md:h-20 object-cover">
+<div class="flex flex-row text-black bg-white justify-center items-center shadow-lg sticky w-full ">
+    <div class="flex md:w-2/6 justify-center md:order-1 ">
+        <div class="md:w-20 mh:h-20">Gran</div>
     </div>
-    <div class="w-full hidden md:w-3/5 justify-center md:order-3 ">
+
+    <div routerLink="/home" class="flex p-1 w-2/6 justify-center md:order-2">
+        <img [src]="logoSrc" alt="logo" class=" md:h-20 object-cover">
+    </div>
+
+    <div class="flex justify-center md:w-2/6 md:order-3 ">
+        <div class="md:w-20 mh:h-20">Clovismo</div>
 
     </div>
-    <div class="w-full hidden md:w-3/5 justify-center md:order-1 ">
 
-    </div>
 </div>

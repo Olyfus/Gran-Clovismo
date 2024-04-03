@@ -8,7 +8,7 @@ import { environment } from '../../../environments/environment.environment';
 })
 export class MenuDeskComponent {
   menuIcon: string = environment.srcIcon + 'Menu.png';
-  flyout: boolean;
+  static flyout: boolean;
   
   btnVoiture = [
     { text: 'Direct', link: '/direct' },
@@ -29,38 +29,28 @@ export class MenuDeskComponent {
     { text: 'La votre', link: '/' }
   ];
 
-  constructor(private el: ElementRef) {
-    this.flyout = false;
+  constructor() {
+    MenuDeskComponent.flyout = false;
   }
-  @HostListener('document:click', ['$event'])
-  onClick(event: Event): void {
-    if (!this.el.nativeElement.contains(event.target)) {
-      this.flyoutClose();
-    }
-  }
+  
 
   getFlyout(): boolean {
-    return this.flyout;
+    return MenuDeskComponent.flyout;
   }
 
-  toggleFlyout(): void {
-    if (this.getFlyout()) {
-      this.flyoutClose()
-    } else if (this.getFlyout() == false) {
-      console.log(this.flyout);
-      this.flyoutOpen()
-    }
+  
+  toggleFlyout(state: boolean) {
+    MenuDeskComponent.flyout = state;
   }
 
   flyoutClose(): void {
-    this.flyout = false;
+    this.toggleFlyout(false);
   }
-
+  
   flyoutOpen(): void {
-    this.flyout = true;
+    this.toggleFlyout(true);
   }
 
   ngOnInit() {
-    console.log(this.menuIcon);
   }
 }

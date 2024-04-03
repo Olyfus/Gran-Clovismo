@@ -1,12 +1,12 @@
 <script src="https://kit.fontawesome.com/af16f6d87d.js" crossorigin="anonymous"></script>
-<div class="fixed bottom-0 md:left-0 w-screen pt-2 md:w-20 h-16 md:h-screen bg-red-300 flex md:flex-col items-center justify-start p-2"
+<div class="fixed bottom-0 md:left-0 w-screen pt-2 md:w-20 h-16 md:h-screen bg-red-300 flex md:flex-col items-center justify-start p-1"
     *ngIf="!getFlyout()">
     <div (click)="flyoutOpen()" class="md:h-20 mb-3 ml-auto mr-auto flex flex-col items-center justify-center">
         <img [src]="menuIcon" alt="menu_icon">
     </div>
 </div>
 
-<div class="fixed bottom-0 md:left-0 md:w-auto h-screen bg-custom-red flex md:flex-col items-center justify-center p-2"
+<div class="fixed bottom-0 md:left-0 md:w-20 h-screen bg-red-300 flex md:flex-col items-center justify-center p-1"
     *ngIf="getFlyout()">
     <div (click)="flyoutClose()" class="h-16 ml-auto mr-auto my-1 flex flex-col items-center justify-center">
         <img [src]="menuIcon" alt="" class=" md:w-12 md:h-12">
@@ -18,16 +18,15 @@
             <div class="group relative flex gap-x-6 rounded-lg p-4 justify-center hover:bg-red-50w">
                 <div>
                     <div class="font-bold text-gray-900">
-                        Écouter
+                        Voiture
                         <span class="absolute inset-0"></span>
                     </div>
                 </div>
             </div>
             <div class="flex flex-col justify-center">
                 <div *ngFor="let button of btnVoiture; let i = index">
-                    <!-- class="p-2 text-white bg-custom-red text-xs rounded-full border-2 border-white flex items-center justify-center" -->
                     <button class="p-1 w-full flex items-center justify-center" routerLink="{{button.link}}"
-                        (click)="toggleFlyout()">
+                        (click)="flyoutClose()">
                         {{button.text}}
                     </button>
                 </div>
@@ -38,16 +37,15 @@
             <div class="group relative flex gap-x-6 rounded-lg p-4 justify-center hover:bg-red-50">
                 <div>
                     <div class="font-bold text-gray-900">
-                        Infos
+                        Courses
                         <span class="absolute inset-0"></span>
                     </div>
                 </div>
             </div>
             <div class="flex flex-col justify-center">
                 <div *ngFor="let button of btnCourse; let i = index">
-                    <!-- class="p-2 text-white bg-custom-red text-xs rounded-full border-2 border-white flex items-center justify-center" -->
                     <button class="p-1 w-full flex items-center justify-center" routerLink="{{button.link}}"
-                        (click)="toggleFlyout();">
+                        (click)="flyoutClose();">
                         {{button.text}}
                     </button>
                 </div>
@@ -58,16 +56,15 @@
             <div class="group relative flex gap-x-6 rounded-lg p-4 justify-center hover:bg-red-50">
                 <div>
                     <div class="font-bold text-gray-900">
-                        Accueil
+                        Classement
                         <span class="absolute inset-0"></span>
                     </div>
                 </div>
             </div>
             <div class="flex flex-col justify-center">
                 <div *ngFor="let button of btnClassement; let i = index">
-                    <!-- class="p-2 text-white bg-custom-red text-xs rounded-full border-2 border-white flex items-center justify-center" -->
                     <button class="p-1 w-full flex items-center justify-center" routerLink="{{button.link}}"
-                        (click)="toggleFlyout();">
+                        (click)="flyoutClose();">
                         {{button.text}}
                     </button>
                 </div>
@@ -85,9 +82,8 @@
             </div>
             <div class="flex flex-col justify-center">
                 <div *ngFor="let button of btnEcurie; let i = index">
-                    <!-- class="p-2 text-white bg-custom-red text-xs rounded-full border-2 border-white flex items-center justify-center" -->
                     <button class="p-1 w-full flex items-center justify-center" routerLink="{{button.link}}"
-                        (click)="toggleFlyout();">
+                        (click)="flyoutClose();">
                         {{button.text}}
                     </button>
                 </div>

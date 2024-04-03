@@ -8,6 +8,10 @@ import { PagesModule } from './common/modules/pages.modules';
 import { MenuDeskComponent } from './composants/menu-desk/menu-desk.component';
 import { NavbarComponent } from './composants/navbar/navbar.component';
 import { FooterComponent } from './composants/footer/footer.component';
+import { EcuriesComponent } from './pages/ecuries/ecuries.component';
+import { ClassementComponent } from './pages/classement/classement.component';
+import { CourseComponent } from './pages/course/course.component';
+import { ListeComponent } from './composants/course/liste/liste.component';
 
 @NgModule({
   declarations: [
