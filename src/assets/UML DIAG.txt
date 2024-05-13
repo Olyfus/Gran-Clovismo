@@ -1,0 +1,28 @@
+UML DIAG
+
+Une écurie a Plusieurs pilote
+Un pilote fait parti d'une écurie
+
+Une voiture a une boîte de vitesse
+Une seule boîte de vitesse est sur la voiture
+
+Une voiture a un seul type de gomme
+Un type de gomme peux être sur plusieurs voiture
+
+Un pilote conduit une voiture
+une voiture est conduite par un pilote
+
+Un pilote roule dans une course
+Une course a plusieurs pilote qui cours
+
+Une course a plusieurs tours
+Plusieurs tours sont a une course
+
+Une course fini avec un podium
+Un podium est la fin de plusieurs course
+
+Un Round lance plusieurs dés
+Un dés est lancé lors de plusieurs dés
+
+Une course a plusieurs controlleur
+Un controlleur est utiliser pour une course
