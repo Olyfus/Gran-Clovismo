@@ -7,25 +7,25 @@ import { environment } from '../../../environments/environment.environment';
   styleUrl: './menu-desk.component.css'
 })
 export class MenuDeskComponent {
-  menuIcon: string = environment.srcIcon + 'Menu.png';
+  menuIcon = environment.srcIcon + 'Menu.png';
   static flyout: boolean;
   
   btnVoiture = [
-    { text: 'Direct', link: '/direct' },
+    { text: 'Schema', link: '/voiture' },
     { text: '', link: '/' }
   ];
 
   btnCourse = [
-    { text: 'Direct', link: '/direct' },
+    { text: 'Course', link: '/course' },
     { text: '', link: '/' }
   ];
 
   btnClassement = [
-    { text: 'Récent', link: '/direct' },
+    { text: 'Récent', link: '/leaderboard' },
     { text: '', link: '/' }
   ];
   btnEcurie = [
-    { text: 'Toutes', link: '/direct' },
+    { text: 'Toutes', link: '/stable' },
     { text: 'La votre', link: '/' }
   ];
 

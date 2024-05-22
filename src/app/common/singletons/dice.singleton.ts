@@ -1,4 +1,3 @@
-import { gearboxEnum } from "../enums/gearbox.enums";
 import { ActionService } from "../services/action.services";
 
 
@@ -63,8 +62,7 @@ export class Dice {
     public getMaxSix() {
         return this.six[1];
     }
-
-
+    
     public static getInstance(): Dice {
         if (!Dice.instance) {
             Dice.instance = new Dice();

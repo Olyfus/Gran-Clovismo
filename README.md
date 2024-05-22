@@ -35,4 +35,7 @@ Et bien avec l'API, surtout avec une méthode de provider, ou plutôt DATA-PROVI
 
 ## Objets
 
-Même si angular n'est pas un framework conçu pour de l'orienté objet, on va en faire
+Même si angular n'est pas un framework conçu pour de l'orienté objet, on va en faire, faire le back en .NET avec les boucles pour le GP
+BDD 
+TDD 
+Data first / Object first, le pj est Object first
