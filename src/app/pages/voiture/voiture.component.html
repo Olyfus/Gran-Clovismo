@@ -1,10 +1,10 @@
-<div class="h-full w-full flex flex-row m-16 gap-2 justify-center items-center">
-    <div class="w-1/2 h-full justify-center items-center flex flex-col bg-red-500 mr-auto ml-auto">
+<div class="h-full w-full flex flex-row m-16 gap-2 justify-center items-center bg-cyan-500">
+    <div class="w-1/2 h-full justify-center items-center flex flex-col bg-red-500 mr-auto ml-auto p-2">
         <p>Fuel : {{v1.getFuel()}}</p>
         <p>Tire : {{v1.getTireType()}}</p>
         <p>Tyre : {{v1.getFuel()}}</p>
     </div>
-    <div class="w-1/2 h-full justify-center items-center flex flex-col bg-yellow-500 mr-auto ml-auto">
+    <div class="w-1/2 h-full justify-center items-center flex flex-col bg-yellow-500 mr-auto ml-auto p-2">
         <button (click)="clickUp()">Upshift</button>
         <button (click)="clickDown(1)">Downshift 1</button>
         <button (click)="clickDown(2)">Downshift 2</button>
