@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
+import {ICourse} from "../../../common/interfaces/course.interface";
 
 @Component({
   selector: 'app-liste',
@@ -6,5 +7,12 @@ import { Component } from '@angular/core';
   styleUrl: './liste.component.css'
 })
 export class ListeComponent {
+  private courses: ICourse[] | undefined;
 
+  constructor() {
+  }
+
+  ngOnInit() {
+    this.courses = [];
+  }
 }
