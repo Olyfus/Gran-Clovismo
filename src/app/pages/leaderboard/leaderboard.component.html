@@ -1,1 +1,17 @@
-<p>leaderboard works!</p>
+<div class="w-[1800px] h-[800px]">
+  <div class="flex flex-col items-center w-full h-full bg-amber-300 p-2">
+    <div class="grid grid-cols-3 w-11/12 h-full bg-cyan-300">
+      <div *ngFor="let podium of podiums" class="w-full">
+        <div class="flex flex-col w-1/4 bg-red-300 justify-center items-center flex-wrap">
+          <p>{{ podium.name }}</p>
+          <div>
+            <ul>
+              <li>{{ podium.firstPlace }}</li>
+              <li>{{ podium.secondPlace }}</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

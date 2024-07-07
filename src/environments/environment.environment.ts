@@ -1,6 +1,8 @@
-export const environment =    {
-    appVersion: '0.0.5',
-    production: false,
-    appLogo: "../assets/icones/logo.png",
-    srcIcon: "../assets/icones/"
+import packageJson from '../../package.json';
+
+export const environment = {
+  appVersion: packageJson.version,
+  production: false,
+  appLogo: "../assets/icones/logo.png",
+  srcIcon: "../assets/icones/"
 };
