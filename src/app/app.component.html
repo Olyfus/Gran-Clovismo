@@ -4,16 +4,19 @@
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
         rel="stylesheet"/>
 </head>
-<div class="flex flex-col h-screen md:pl-20">
+<div class="flex flex-row md:flex-col h-screen md:pl-28">
 
-  <div class="">
-    <app-navbar></app-navbar>
-  </div>
+  <app-menu-desk class="flex-none hidden md:block"></app-menu-desk>
 
-  <div class="flex flex-row justify-center items-center overflow-auto scrollbar-hide">
-    <router-outlet></router-outlet>
+  <div class="flex flex-col w-full h-full justify-start items-center overflow-auto scrollbar-hide">
+    <app-navbar class="w-full h-1/12"></app-navbar>
+    <div class="h-full w-full flex justify-center items-center bg-amber-50">
+      <div class="md:w-[1800px] md:h-[800px]">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
   </div>
 
   <app-footer class="flex-none mt-18 pt-2 md:hidden"></app-footer>
-  <app-menu-desk class="flex-none hidden md:block"></app-menu-desk>
+
 </div>

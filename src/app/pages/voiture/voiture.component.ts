@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
-import { VoitureObj } from '../../common/objects/voiture.object';
-import { Dice } from '../../common/singletons/dice.singleton';
-import { gearboxEnum } from '../../common/enums/gearbox.enums';
+import {Component} from '@angular/core';
+import {testCar, VoitureObj} from '../../common/objects/voiture.object';
+import {Dice} from '../../common/singletons/dice.singleton';
+import {gearboxEnum} from '../../common/enums/gearbox.enums';
 
 @Component({
   selector: 'app-voiture',
@@ -13,13 +13,15 @@ export class VoitureComponent {
   public round: any;
 
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
     this.round = Dice.getInstance().action;
     this.v1 = new VoitureObj;
+    this.v1.selectVoiture(testCar);
   }
-  
+
   clickUp() {
     this.v1.upShift();
     this.rollWithCarGearbox(this.v1.getGear());

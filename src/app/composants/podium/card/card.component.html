@@ -1,0 +1,13 @@
+<div class="flex flex-col w-full h-full bg-red-300 justify-center items-center flex-wrap">
+  <p>{{ podium.name }}</p>
+  <div>
+    <ul class="flex flex-col">
+      <li>{{ podium.firstPlace }}</li>
+      <li>{{ podium.secondPlace }}</li>
+    </ul>
+  </div>
+  <p>Nombre de tour :</p>
+  <div class="flex items-end">
+    <button (click)="onCardClick()">Plus...</button>
+  </div>
+</div>

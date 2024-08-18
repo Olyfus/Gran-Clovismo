@@ -16,8 +16,6 @@ export class LeaderboardComponent {
       {name: "spa", firstPlace: "clovis", secondPlace: "laurie"},
       {name: "nurb", firstPlace: "mael", secondPlace: "ad"},
       {name: "le mans", firstPlace: "ad", secondPlace: "mael"},
-      {name: "le mans", firstPlace: "ad", secondPlace: "mael"},
-      {name: "le mans", firstPlace: "ad", secondPlace: "mael"},
     ];
   }
 

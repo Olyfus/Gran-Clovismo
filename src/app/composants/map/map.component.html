@@ -1,0 +1,7 @@
+{{ input_map }}
+<img [alt]="alt"
+     [src]="src"
+     useMap="usemap">
+<map [id]="map_id" [name]="map_name">
+  <area *ngFor="let area of cases; index as i" [coords]="area.coords" [id]="i" alt=""/>
+</map>

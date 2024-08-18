@@ -8,6 +8,9 @@ import {EcuriesComponent} from '../../pages/ecuries/ecuries.component';
 import {LeaderboardComponent} from '../../pages/leaderboard/leaderboard.component';
 import {StableComponent} from '../../pages/stable/stable.component';
 import {CommonModule} from "@angular/common";
+import {PodiumCardComponent} from "../../composants/podium/card/card.component";
+import {TestCourseComponent} from "../../pages/test-course/test-course.component";
+import {MapComponent} from "../../composants/map/map.component";
 
 @NgModule({
   declarations: [
@@ -19,6 +22,9 @@ import {CommonModule} from "@angular/common";
     ListeComponent,
     StableComponent,
     LeaderboardComponent,
+    PodiumCardComponent,
+    TestCourseComponent,
+    MapComponent,
   ],
   imports: [
     CommonModule,
