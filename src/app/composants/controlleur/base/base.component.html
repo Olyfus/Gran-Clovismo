@@ -1,1 +1,11 @@
-<p>Controlleur base works!</p>
+<div class="flex flex-col items-center justify-center w-full h-full bg-cyan-300 p-2 gap-2">
+  <div *ngIf="sm">
+    <control-telephone></control-telephone>
+  </div>
+  <div *ngIf="md">
+    <control-tablette></control-tablette>
+  </div>
+  <div *ngIf="lg">
+    <control-ordinateur></control-ordinateur>
+  </div>
+</div>

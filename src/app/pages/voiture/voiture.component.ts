@@ -17,7 +17,7 @@ export class VoitureComponent {
   }
 
   ngOnInit() {
-    this.round = Dice.getInstance().action;
+    this.round = Dice.getInstance();
     this.v1 = new VoitureObj;
     this.v1.selectVoiture(testCar);
   }

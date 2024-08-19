@@ -1,12 +1,14 @@
 <div class="flex flex-col items-center justify-center w-full h-full bg-cyan-300 p-2 gap-2">
   <div class="w-full h-4/6 bg-amber-400">
     Vision map
-    <app-map [input_map]="2"></app-map>
+    <app-map [input_map]="input_map_nb"></app-map>
   </div>
   <div class="w-full h-2/6 bg-amber-500">
     Controlleurs
-    <div class="flex flex-row w-full">
-
+    <div class="flex flex-row items-center justify-evenly w-full">
+      <control-base></control-base>
+      <control-base></control-base>
+      <control-base></control-base>
     </div>
   </div>
 </div>

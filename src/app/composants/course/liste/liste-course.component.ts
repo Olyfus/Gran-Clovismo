@@ -2,11 +2,11 @@ import {Component} from '@angular/core';
 import {ICourse} from "../../../common/interfaces/course.interface";
 
 @Component({
-  selector: 'app-liste',
-  templateUrl: './liste.component.html',
-  styleUrl: './liste.component.css'
+  selector: 'composant-liste-course',
+  templateUrl: './liste-course.component.html',
+  styleUrl: './liste-course.component.css'
 })
-export class ListeComponent {
+export class ListeCourseComponent {
   private courses: ICourse[] | undefined;
 
   constructor() {

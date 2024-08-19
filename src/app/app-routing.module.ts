@@ -4,18 +4,18 @@ import {HomeComponent} from './pages/home/home.component';
 import {VoitureComponent} from './pages/voiture/voiture.component';
 import {CourseComponent} from './pages/course/course.component';
 import {LeaderboardComponent} from './pages/leaderboard/leaderboard.component';
-import {StableComponent} from './pages/stable/stable.component';
 import {PodiumComponent} from "./pages/podium/podium.component";
 import {TestCourseComponent} from "./pages/test-course/test-course.component";
+import {EcuriesComponent} from "./pages/ecuries/ecuries.component";
 
-const routes: Routes = [
-  {path: 'stable', component: StableComponent},
+export const routes: Routes = [
+  {path: 'ecurie', component: EcuriesComponent},
   {path: 'leaderboard', component: LeaderboardComponent},
   {path: 'course', component: CourseComponent},
   {path: 'voiture', component: VoitureComponent},
-  {path: 'home', component: HomeComponent},
   {path: 'podium', component: PodiumComponent},
   {path: 'test', component: TestCourseComponent},
+  {path: 'home', component: HomeComponent},
   {path: '**', redirectTo: '/home'},
 ];
 

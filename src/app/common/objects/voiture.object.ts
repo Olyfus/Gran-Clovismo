@@ -2,6 +2,7 @@ import {IVoiture} from './../interfaces/voiture.interface';
 import {gearboxEnum} from "../enums/gearbox.enums";
 import {tireType} from "../enums/tireType.enum";
 import {GearboxService} from '../services/gearbox.services';
+import {Dice} from "../singletons/dice.singleton";
 
 export const testCar: IVoiture = {
   tire: 3,
@@ -117,5 +118,9 @@ export class VoitureObj {
     this.gear = voiture.gear;
   }
 
+  paddock() {
+    this.selectVoiture(testCar);
+    this.upShift();
+  }
 
 }

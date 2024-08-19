@@ -7,19 +7,19 @@ import {environment} from '../environments/environment.environment';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  currentApplicationVersion: string = environment.appVersion;
-  title: string = 'Gran Clovismo ' + this.currentApplicationVersion;
+  static sc_type_small: boolean;
+  static sc_type_medium: boolean;
+  static sc_type_large: boolean;
   screenHeight!: number;
   screenWidth!: number;
-  small: boolean;
-  medium: boolean;
-  large: boolean;
+  currentApplicationVersion: string = environment.appVersion;
+  title: string = 'Gran Clovismo ' + this.currentApplicationVersion;
 
   constructor() {
     this.getScreenSize();
-    this.small = false;
-    this.medium = false;
-    this.large = false;
+    AppComponent.sc_type_small = false;
+    AppComponent.sc_type_medium = false;
+    AppComponent.sc_type_large = false;
   }
 
   @HostListener('window:resize', ['$event'])
@@ -42,18 +42,18 @@ export class AppComponent {
   }
 
   screenType(type: string) {
-    this.small = false;
-    this.medium = false;
-    this.large = false;
+    AppComponent.sc_type_small = false;
+    AppComponent.sc_type_medium = false;
+    AppComponent.sc_type_large = false;
     switch (type) {
       case 'large' :
-        this.large = true;
+        AppComponent.sc_type_large = true;
         break;
       case 'medium' :
-        this.medium = true;
+        AppComponent.sc_type_medium = true;
         break;
       case 'small' :
-        this.small = true;
+        AppComponent.sc_type_small = true;
         break;
       default :
         break;
