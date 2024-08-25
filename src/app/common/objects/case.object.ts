@@ -1,4 +1,5 @@
 import {ICase} from "../interfaces/case.interface";
+import {VoitureObj} from "./voiture.object";
 
 export const testCase: ICase = {
   id: [0],
@@ -12,6 +13,7 @@ export class CasesObj implements ICase {
   point_2!: string;
   point_3!: string;
   point_4!: string;
+  voiture_dessus!: VoitureObj | null;
 
 
   constructor(c: ICase) {
@@ -36,6 +38,18 @@ export class CasesObj implements ICase {
       console.log("D")
       this.get_cords()
     }
+  }
+
+  car_on_this(v: VoitureObj): void {
+    this.voiture_dessus = v;
+  }
+
+  car_left(): void {
+    this.voiture_dessus = null;
+  }
+
+  getCasesId(): number[] {
+    return this.id;
   }
 
   get_cords(): void {

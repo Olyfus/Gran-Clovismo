@@ -23,6 +23,8 @@ export class CourseComponent {
   // api_service : ApiService;
 
   // Map
+  //@ts-ignore
+  map !: MapObj;
 
   // Ordre de jeux
   round_order!: VoitureObj[];
@@ -57,7 +59,7 @@ export class CourseComponent {
   }
 
   checkBloquage(): void {
-    
+
   }
 
   checkVirage(): void {
@@ -65,10 +67,29 @@ export class CourseComponent {
   }
 
   checkAccrochage(): void {
+    // les voitures que ça va concerné
+    let affectedCars: VoitureObj[] = [];
+    let around
 
+    // On va check pour check si chaque voiture n'est pas dans une case à nous ou une case
+    for (let i: number = 0; i < this.liste_voiture.length; i++) {
+
+      // on veux comparer à une autre voiture
+      if (this.voiture != this.liste_voiture[i]) {
+
+        // on compare la position de la voiture avec l'autre voiture
+        this.map.isAround(this.voiture, this.liste_voiture[i])
+
+      }
+
+    }
   }
 
+
   checkCasseMoteur(diceRolled: number): void {
+
+    //
+
     if (diceRolled == this.dice.black_motor_five && this.voiture.getGear() == gearboxEnum.cinq || diceRolled == this.dice.black_motor_six && this.voiture.getGear() == gearboxEnum.six) {
 
       let affectedCars: VoitureObj[] = [];

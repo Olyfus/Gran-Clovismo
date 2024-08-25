@@ -10,22 +10,22 @@ export class MenuDeskComponent {
   static flyout: boolean;
   menuIcon = environment.srcIcon + 'Menu.png';
   btnVoiture = [
-    {text: 'Schema', link: '/voiture'},
+    {text: 'Schema', link: '/'},
     {text: '', link: '/'}
   ];
 
   btnCourse = [
-    {text: 'Course', link: '/course'},
-    {text: 'Test', link: '/test'},
+    {text: 'Course', link: '/'},
+    {text: 'Test', link: '/'},
     {text: '', link: '/'}
   ];
 
   btnClassement = [
-    {text: 'Récent', link: '/leaderboard'},
+    {text: 'Récent', link: '/'},
     {text: '', link: '/'}
   ];
   btnEcurie = [
-    {text: 'Toutes', link: '/stable'},
+    {text: 'Toutes', link: '/'},
     {text: 'La votre', link: '/'}
   ];
 

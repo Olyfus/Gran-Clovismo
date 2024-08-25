@@ -1,14 +1,14 @@
 <script crossorigin="anonymous" src="https://kit.fontawesome.com/af16f6d87d.js"></script>
 <div
   *ngIf="!getFlyout()"
-  class="fixed bottom-0 md:left-0 pt-2 md:w-28 h-16 md:h-screen bg-red-300 flex md:flex-col items-center justify-start p-1">
+  class="fixed bottom-0 md:left-0 pt-2 md:w-28 h-16 md:h-screen bg-red-300 flex md:flex-col items-center justify-start p-1 mb-4">
   <div (click)="flyoutOpen()" class="md:h-28 mb-3 ml-auto mr-auto flex flex-col items-center justify-center">
     <img [src]="menuIcon" alt="menu_icon">
   </div>
 </div>
 
 <div *ngIf="getFlyout()"
-     class="fixed bottom-0 md:left-0 md:w-28 h-screen bg-red-300 flex md:flex-col items-center justify-center p-1">
+     class="fixed bottom-0 md:left-0 pt-2 md:w-28 h-screen bg-red-300 flex md:flex-col items-center justify-center p-1">
   <div (click)="flyoutClose()" class="h-16 ml-auto mr-auto my-1 flex flex-col items-center justify-center">
     <img [src]="menuIcon" alt="" class=" md:w-28 md:h-28">
   </div>

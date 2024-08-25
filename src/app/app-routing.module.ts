@@ -7,8 +7,12 @@ import {LeaderboardComponent} from './pages/leaderboard/leaderboard.component';
 import {PodiumComponent} from "./pages/podium/podium.component";
 import {TestCourseComponent} from "./pages/test-course/test-course.component";
 import {EcuriesComponent} from "./pages/ecuries/ecuries.component";
+import {LegalComponent} from "./pages/legal/legal.component";
+import {ConditionGeneralesComponent} from "./pages/condition-generales/condition-generales.component";
 
 export const routes: Routes = [
+  {path: 'legal', component: LegalComponent},
+  {path: 'cgu', component: ConditionGeneralesComponent},
   {path: 'ecurie', component: EcuriesComponent},
   {path: 'leaderboard', component: LeaderboardComponent},
   {path: 'course', component: CourseComponent},

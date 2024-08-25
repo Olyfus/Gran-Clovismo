@@ -1,0 +1,44 @@
+<div class="flex flex-col items-stretch justify-evenly gap-2">
+  <h1 class="major">MENTIONS LÉGALES</h1>
+  <p>Dernière mise à jour : {{ date_maj }} à {{ heure_maj }}</p>
+  <hr>
+  <p>Conformément à l'article 6-3 et 6-19 de la Loi N°2004-575 du 21 Juin 2004 pour la confiance dans l'économie
+    numérique (LCEN ou LEN).<br>
+    L'utilisateur doit pouvoir prendre connaissances des présentes mentions légales.<br>
+    La connexion et navigation sur le site par l'utilisateur implique l'acceptation des présentes mentions légales.</p>
+  <h1 class="major">ARTICLE 1 ― L'HÉBERGEUR</h1>
+  <section class="flex flex-col items-stretch justify-evenly gap-2">
+    <div class="flex flex-col items-stretch justify-evenly gap-2">
+      <section class="flex flex-col items-stretch justify-evenly gap-2">
+
+
+        <h3>Auto-héberger (Hébergement)</h3>
+
+
+        <p><strong>Courriel</strong> : {{ hebergeur_contact }}</p>
+      </section>
+      <hr>
+      <section class="flex flex-col items-stretch justify-evenly gap-2">
+
+        <h3>{{ host_domaine.name }} ({{ host_domaine.fct }})</h3>
+        <p>{{ host_domaine.siret }}</p>
+        <p><strong>Siège social</strong> : </p>
+        <p>SAS au capital de 10 174 560 €</p>
+        <p><strong>Code APE</strong> : {{ host_domaine.cde_ape }}</p>
+        <p><strong>Président</strong> : {{ host_domaine.pres }}</p>
+        <p><strong>N° TVA</strong> : {{ host_domaine.nb_tva }}</p>
+        <p>{{ host_domaine.description }}</p>
+      </section>
+      <hr>
+      <section class="flex flex-col items-stretch justify-evenly gap-2">
+
+        <h3>{{ host_protect.name }} ({{ host_protect.fct }})</h3>
+        <p>{{ host_protect.siret }}</p>
+        <p><strong>Siège social</strong> : {{ host_protect.adresse }}</p>
+        <p><strong>Antenne France</strong> : {{ host_protect.french_antenna }}</p>
+        <p><strong>Courriel</strong> : {{ host_protect.mail }}</p>
+      </section>
+
+    </div>
+  </section>
+</div>
