@@ -8,6 +8,8 @@ import {CommonModule} from "@angular/common";
 import {TestCourseComponent} from "../../pages/test-course/test-course.component";
 import {MapComponent} from "../../composants/map/map.component";
 import {ComposantsModule} from "./composants.module";
+import {MembreComponent} from "../../pages/membre/membre.component";
+import {AuthComponent} from "../../pages/auth/auth.component";
 
 @NgModule({
   declarations: [
@@ -18,6 +20,8 @@ import {ComposantsModule} from "./composants.module";
     LeaderboardComponent,
     TestCourseComponent,
     MapComponent,
+    MembreComponent,
+    AuthComponent,
   ],
   imports: [
     CommonModule,

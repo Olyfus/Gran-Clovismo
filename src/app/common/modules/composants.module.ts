@@ -4,12 +4,16 @@ import {ListeCourseComponent} from "../../composants/course/liste/liste-course.c
 import {PodiumCardComponent} from "../../composants/podium/card/card.component";
 import {ControlleurModule} from "./controlleur.module";
 import {RuntimeModule} from "./runtime.module";
+import {InscriptionComponent} from "../../composants/auth/inscription/inscription.component";
+import {LoginComponent} from "../../composants/auth/login/login.component";
 
 
 @NgModule({
   declarations: [
     ListeCourseComponent,
     PodiumCardComponent,
+    InscriptionComponent,
+    LoginComponent,
   ],
   imports: [
     CommonModule,
@@ -21,6 +25,8 @@ import {RuntimeModule} from "./runtime.module";
     PodiumCardComponent,
     ControlleurModule,
     RuntimeModule,
+    InscriptionComponent,
+    LoginComponent,
   ]
 })
 export class ComposantsModule {
