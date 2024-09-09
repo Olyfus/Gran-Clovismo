@@ -1,5 +1,6 @@
 import { gearboxEnum } from "../enums/gearbox.enums";
 import { tireType } from "../enums/tireType.enum";
+import {PiloteObj} from "../objects/pilote.object";
 
 export interface IVoiture {
     tire: number;
@@ -12,8 +13,8 @@ export interface IVoiture {
     tireType: tireType;
     gear: gearboxEnum;
 
-    ecurie?: string;
-    pilote?: string;
+    ecurie?: PiloteObj;
+    pilote?: PiloteObj;
     couleurP?: string;
     couleurS?: string;
 }

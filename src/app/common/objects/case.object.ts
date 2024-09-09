@@ -2,12 +2,13 @@ import {ICase} from "../interfaces/case.interface";
 import {VoitureObj} from "./voiture.object";
 
 export const testCase: ICase = {
-  id: [0],
+  pos_id: [0],
   coords: "0,0,0,0,0,0,0,0"
 }
 
 export class CasesObj implements ICase {
-  id!: number[];
+  private _id!: number;
+  pos_id!: number[];
   coords!: string;
   point_1!: string;
   point_2!: string;
@@ -17,7 +18,7 @@ export class CasesObj implements ICase {
 
 
   constructor(c: ICase) {
-    this.id = c.id;
+    this.pos_id = c.pos_id;
     if (c.coords) {
       this.coords = c.coords;
       this.get_points_from_cords();
@@ -48,8 +49,12 @@ export class CasesObj implements ICase {
     this.voiture_dessus = null;
   }
 
+  get_car_on_case(): VoitureObj|null {
+    return this.voiture_dessus;
+  }
+
   getCasesId(): number[] {
-    return this.id;
+    return this.pos_id;
   }
 
   get_cords(): void {

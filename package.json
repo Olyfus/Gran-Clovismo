@@ -1,18 +1,17 @@
 {
   "name": "gran-clovismo",
-  "version": "0.3.3",
+  "version": "0.3.4",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start:local": "npm run update-patch && ng serve",
+    "start:dev": "npm run update-patch && npm i && ng serve",
+    "start:lan": "npm i && ng serve -host 0.0.0.0 -port 4200",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "update-major": "npm --no-git-tag-version version major",
     "update-minor": "npm --no-git-tag-version version minor",
-    "update-patch": "npm --no-git-tag-version version patch",
-    "paddocks": "npm run update-patch && npm run start",
-    "qualif": "npm run update-minor && npm run start",
-    "championnat": "npm run update-major && npm run start"
+    "update-patch": "npm --no-git-tag-version version patch"
   },
   "private": true,
   "dependencies": {

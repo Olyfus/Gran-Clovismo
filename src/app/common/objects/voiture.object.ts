@@ -3,6 +3,8 @@ import {gearboxEnum} from "../enums/gearbox.enums";
 import {tireType} from "../enums/tireType.enum";
 import {GearboxService} from '../services/gearbox.services';
 import {Dice} from "../singletons/dice.singleton";
+import {PiloteObj} from "./pilote.object";
+import {EcurieObj} from "./ecurie.object";
 
 export const testCar: IVoiture = {
   tire: 3,
@@ -18,8 +20,8 @@ export const testCar: IVoiture = {
 
 export class VoitureObj {
   gearBoxFunction: GearboxService;
-  ecurie?: string | undefined;
-  pilote?: string | undefined;
+  ecurie!: EcurieObj | undefined;
+  pilote!: PiloteObj | undefined;
   couleurP?: string | undefined;
   couleurS?: string | undefined;
   private tire!: number;
