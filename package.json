@@ -1,6 +1,6 @@
 {
   "name": "gran-clovismo",
-  "version": "0.3.4",
+  "version": "0.3.5",
   "scripts": {
     "ng": "ng",
     "start:local": "npm run update-patch && ng serve",
