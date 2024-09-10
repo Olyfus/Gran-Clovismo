@@ -7,7 +7,6 @@ export const testCase: ICase = {
 }
 
 export class CasesObj implements ICase {
-  private _id!: number;
   pos_id!: number[];
   coords!: string;
   point_1!: string;
@@ -15,7 +14,7 @@ export class CasesObj implements ICase {
   point_3!: string;
   point_4!: string;
   voiture_dessus!: VoitureObj | null;
-
+  private _id!: number;
 
   constructor(c: ICase) {
     this.pos_id = c.pos_id;
@@ -49,7 +48,7 @@ export class CasesObj implements ICase {
     this.voiture_dessus = null;
   }
 
-  get_car_on_case(): VoitureObj|null {
+  get_car_on_case(): VoitureObj | null {
     return this.voiture_dessus;
   }
 
@@ -86,5 +85,6 @@ export class CasesObj implements ICase {
     if (this.point_4 != c.point_3 || this.point_4 == undefined) {
       this.point_3 = c.point_3;
     }
+
   }
 }
