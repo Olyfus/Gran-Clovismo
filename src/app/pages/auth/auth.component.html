@@ -1,1 +1,84 @@
-<p>auth works!</p>
+<div class="flex flex-col items-center justify-between w-full h-full">
+  <div class="flex flex-col items-center justify-between w-5/6 h-5/6 p-2 gap-2 bg-amber-200 rounded ">
+
+    <div class="flex flex-row justify-around gap-2 w-full">
+      <button class="flex w-1/2 justify-center" (click)="change('l')">
+        <div *ngIf="!l_or_r" class="rounded m-0.2 w-1/2 bg-amber-600">Login</div>
+        <div *ngIf="l_or_r" class="rounded m-0.2 w-1/2">Login</div>
+      </button>
+      <button class="flex w-1/2 justify-center" (click)="change('r')">
+        <div *ngIf="!l_or_r" class="rounded m-0.2 w-1/2">Register</div>
+        <div *ngIf="l_or_r" class="rounded m-0.2 w-1/2 bg-amber-600">Register</div>
+      </button>
+    </div>
+
+
+    <form *ngIf="!l_or_r" (submit)="onSubmitLogin($event)" name="loginform" class="flex gap-3.5 flex-col w-[85%] rounded-[40px]">
+      <div class="flex justify-center gap-1 flex-col" >
+        <label for="email" class="font-semibold">Email</label>
+        <input id="email" name="email" autocomplete="loginemail" required placeholder="Exemple@gmail.com" class="bg-custom_input text-custom_text_input w-full rounded-[10px] p-[8px]" />
+      </div>
+      <div class="flex justify-center gap-1 flex-col" >
+        <div class="flex items-center justify-start w-1/2">
+          <label for="motdepasse" class="font-semibold">Mot de passe</label>
+        </div>
+        <div class="flex w-full relative justify-center items-center">
+          <input pattern="(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[\/\!#@]).{8,}" title="Le mot de passe doit contenir au moins 8 caractères, au moins une lettre majuscule, une lettre minuscule, un chiffre et un des caractères spéciaux /, ! ou #."  id="motdepasse" name="motdepasse" required type={{this.login_password}} value={{this.password}} (keyup)="changeLoginPassword($event)" placeholder="***********" class="bg-custom_input text-custom_text_input w-full rounded-[10px] p-[8px]" />
+          <i (click)="seeLoginPassword()" class="fa fa-eye absolute right-[5px]" aria-hidden="true"></i>
+        </div>
+      </div>
+    </form>
+
+
+    <form *ngIf="l_or_r" (submit)="onSubmitRegister($event)" name="registerform" class="flex gap-3.5 flex-col w-[85%] rounded-[40px]">
+      <div class="flex gap-4">
+        <div class="w-1/2">
+          <label for="nom" class="font-semibold">Nom</label>
+          <input (keyup)="changeNom($event)" id="nom" name="nom" type="text" required class="bg-custom_input text-custom_text_input w-full rounded-[10px] p-[8px]"/>
+        </div>
+        <div class="w-1/2">
+          <label for="prenom" class="font-semibold">Prénom</label>
+          <input (keyup)="changePrenom($event)" id="prenom" name="prenom" type="text" required class="bg-custom_input text-custom_text_input w-full rounded-[10px] p-[8px]"/>
+        </div>
+      </div>
+      <div class="flex justify-center gap-1 flex-col" >
+        <label for="email" class="font-semibold">Email</label>
+        <input (keyup)="changeRegisterEmail($event)" id="registeremail" name="email" type="email" required placeholder="Exemple@gmail.com" autocomplete="email" class="bg-custom_input text-custom_text_input w-full rounded-[10px] p-[8px]" />
+      </div>
+      <div class="flex justify-center gap-1 flex-col" >
+        <div class="flex items-center gap-2.5">
+          <div class="flex items-center justify-start w-full">
+            <label for="motdepasse" class="font-semibold">Mot de passe</label>
+          </div>
+        </div>
+        <div class="flex w-full relative justify-center items-center">
+          <input pattern="(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[\/\!#@]).{8,}" title="Le mot de passe doit contenir au moins 8 caractères, au moins une lettre majuscule, une lettre minuscule, un chiffre et un des caractères spéciaux /, ! ou #."  id="registermotdepasse" name="motdepasse" type={{this.register_password}} (keyup)="changeRegisterPassword($event)" placeholder="***********" class="bg-custom_input text-custom_text_input w-full rounded-[10px] p-[8px]" />
+          <i (click)="seeRegisterPassword()" class="fa fa-eye absolute right-[5px]" aria-hidden="true"></i>
+        </div>
+      </div>
+      <div class="flex justify-center gap-1 flex-col" >
+        <div class="flex items-center gap-2.5">
+          <div class="flex items-center justify-start w-full">
+            <label for="confirmmotdepasse" class="font-semibold">Confirmation mot de passe</label>
+          </div>
+        </div>
+        <div class="flex w-full relative justify-center items-center">
+          <input pattern="(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[\/\!#@]).{8,}" title="Le mot de passe doit contenir au moins 8 caractères, au moins une lettre majuscule, une lettre minuscule, un chiffre et un des caractères spéciaux /, ! ou #." id="confirmmotdepasse" name="confirmmotdepasse" (keyup)="changeConfirmRegisterPassword($event)" type={{this.register_confirm_password}} (keyup)="changeConfirmRegisterPassword($event)" placeholder="***********" class="bg-custom_input text-custom_text_input w-full rounded-[10px] p-[8px]" />
+          <i (click)="seeConfirmRegisterPassword()" class="fa fa-eye absolute right-[5px]" aria-hidden="true"></i>
+        </div>
+      </div>
+    </form>
+
+
+    <div class="flex flex-row justify-between items-end gap-2 w-full">
+      <div> </div>
+      <button *ngIf="!l_or_r" (click)="login()">
+        Connexion
+      </button>
+      <button *ngIf="l_or_r" (click)="register()">
+        Créer mon compte
+      </button>
+    </div>
+
+  </div>
+</div>

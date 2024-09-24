@@ -1,6 +1,6 @@
 {
   "name": "gran-clovismo",
-  "version": "0.3.5",
+  "version": "0.3.7",
   "scripts": {
     "ng": "ng",
     "start:local": "npm run update-patch && ng serve",
@@ -25,6 +25,11 @@
     "@angular/platform-browser": "^17.0.0",
     "@angular/platform-browser-dynamic": "^17.0.0",
     "@angular/router": "^17.0.0",
+    "@mapbox/mapbox-sdk": "^0.16.0",
+    "@types/leaflet": "^1.9.12",
+    "axios": "^1.7.2",
+    "leaflet": "^1.9.4",
+    "mapbox-gl": "^3.4.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.2"
