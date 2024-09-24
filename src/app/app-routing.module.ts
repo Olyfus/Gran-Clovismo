@@ -9,6 +9,7 @@ import {TestCourseComponent} from "./pages/test-course/test-course.component";
 import {EcuriesComponent} from "./pages/ecuries/ecuries.component";
 import {LegalComponent} from "./pages/legal/legal.component";
 import {ConditionGeneralesComponent} from "./pages/condition-generales/condition-generales.component";
+import {AuthComponent} from "./pages/auth/auth.component";
 
 export const routes: Routes = [
   {path: 'legal', component: LegalComponent},
@@ -19,6 +20,7 @@ export const routes: Routes = [
   {path: 'voiture', component: VoitureComponent},
   {path: 'podium', component: PodiumComponent},
   {path: 'test', component: TestCourseComponent},
+  {path: 'login', component: AuthComponent},
   {path: 'home', component: HomeComponent},
   {path: '**', redirectTo: '/home'},
 ];

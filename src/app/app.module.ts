@@ -9,6 +9,9 @@ import {NavigationModule} from "./common/modules/navigation.module";
 import { LegalComponent } from './pages/legal/legal.component';
 import { ConditionGeneralesComponent } from './pages/condition-generales/condition-generales.component';
 import { MenuPhoneComponent } from './composants/menu-phone/menu-phone.component';
+import {HttpClientModule} from "@angular/common/http";
+import {RouterOutlet} from "@angular/router";
+import {CommonModule, JsonPipe} from "@angular/common";
 
 @NgModule({
   declarations: [
@@ -21,6 +24,10 @@ import { MenuPhoneComponent } from './composants/menu-phone/menu-phone.component
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    HttpClientModule,
+    RouterOutlet,
+    JsonPipe,
+    CommonModule,
     NavigationModule,
     PagesModule,
   ],
