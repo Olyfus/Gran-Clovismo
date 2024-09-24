@@ -7,8 +7,7 @@ import { environment } from '../../../environments/environment.environment';
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
-  currentApplicationVersion = environment.appVersion;
-  title = 'Gran-Clovismo ' + this.currentApplicationVersion;
+  title = 'Gran-Clovismo' ;
   constructor() { }
 
   ngOnInit() {

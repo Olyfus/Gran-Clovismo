@@ -16,7 +16,7 @@ export class MenuDeskComponent {
 
   btnCourse = [
     {text: 'Course', link: '/'},
-    {text: 'Test', link: '/'},
+    {text: 'Test', link: '/test'},
     {text: '', link: '/'}
   ];
 
