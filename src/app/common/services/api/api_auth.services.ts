@@ -10,8 +10,21 @@ import {User} from "../../objects/user.object";
   providedIn: "root",
 })
 
+
 export class AuthApiServices extends ApiService {
   auth_url: string = this.root_host+'/user';
+  register_data = {
+    nom: '',
+    prenom: '',
+    email: '',
+    mdp: '',
+    confirme_mdp: ''
+  }
+
+  login_data = {
+    email: '',
+    mdp: ''
+  }
 
   getAllUsers(): Observable<User[]> {
     return this.client.get<User[]>(`${this.auth_url}/getall`).pipe(map((res) => res));
@@ -23,6 +36,6 @@ export class AuthApiServices extends ApiService {
   }
 
   register(): void {
-
+   // this.client.post(`${this.auth_url}/`,)
   }
 }

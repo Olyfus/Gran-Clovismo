@@ -11,7 +11,7 @@ import { catchError, tap,map } from 'rxjs/operators';
 export class ApiService {
 
     host: string = 'http://127.0.0.1';
-    port: number = 3001;
+    port: number = 3000;
     root_host: string = this.host+':'+this.port.toString()
     client: HttpClient;
 
