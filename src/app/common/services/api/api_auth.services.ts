@@ -13,6 +13,7 @@ import {User} from "../../objects/user.object";
 
 export class AuthApiServices extends ApiService {
   auth_url: string = this.root_host+'/user';
+  access_token: string = ''
   register_data = {
     nom: '',
     prenom: '',
@@ -21,9 +22,16 @@ export class AuthApiServices extends ApiService {
     confirme_mdp: ''
   }
 
+  register_dto = {
+    email: '',
+    password: '',
+    nom: '',
+    prenom: '',
+  }
+
   login_data = {
     email: '',
-    mdp: ''
+    password: ''
   }
 
   getAllUsers(): Observable<User[]> {
@@ -32,10 +40,22 @@ export class AuthApiServices extends ApiService {
 
   //login(dto: loginDto): Observable<string> {
   login(): Observable<string> {
-    return this.client.get<string>(`${this.auth_url}/login`).pipe(map((access_token)=> access_token));
+    console.log('Plop')
+    console.log(this.login_data)
+    return this.client.post<string>(`${this.auth_url}/login`, this.login_data).pipe(map((token)=> this.access_token =token));
   }
 
-  register(): void {
-   // this.client.post(`${this.auth_url}/`,)
+  register(): Observable<string>{
+    console.log('Plop')
+    console.log(this.register_data)
+    if (this.register_data.mdp == this.register_data.confirme_mdp) {
+      console.log('Plop pop opp')
+      this.register_dto.email = this.register_data.email;
+      this.register_dto.password = this.register_data.mdp;
+      this.register_dto.nom = this.register_data.nom;
+      this.register_dto.prenom = this.register_data.prenom;
+      return this.client.post<string>(`${this.auth_url}/register`, this.register_dto).pipe(map((a) => a));
+    }
+    return this.client.post<string>(`${this.auth_url}/login`, this.login_data).pipe(map((access_token)=> access_token))
   }
 }

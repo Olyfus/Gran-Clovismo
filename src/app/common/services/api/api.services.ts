@@ -23,7 +23,7 @@ export class ApiService {
 
     getHello(): Observable<any> {
         // Le Client http, Utilise la méthode Get pour API, chemin de l'API pour la méthode, mappe tout les objet
-      console.log(this.root_host+'user/')
+
       console.log(this.client.get(`${this.root_host}/user/`));
       return this.http.get(`${this.root_host}/`)
           .pipe(map((data) =>

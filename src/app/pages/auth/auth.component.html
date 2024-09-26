@@ -16,7 +16,7 @@
     <form *ngIf="!l_or_r" (submit)="onSubmitLogin($event)" name="loginform" class="flex gap-3.5 flex-col w-[85%] rounded-[40px]">
       <div class="flex justify-center gap-1 flex-col" >
         <label for="email" class="font-semibold">Email</label>
-        <input id="email" name="email" autocomplete="loginemail" required placeholder="Exemple@gmail.com" class="bg-custom_input text-custom_text_input w-full rounded-[10px] p-[8px]" />
+        <input (keyup)="changeLoginEmail($event)"  id="email" name="email" autocomplete="loginemail" required placeholder="Exemple@gmail.com" class="bg-custom_input text-custom_text_input w-full rounded-[10px] p-[8px]" />
       </div>
       <div class="flex justify-center gap-1 flex-col" >
         <div class="flex items-center justify-start w-1/2">
