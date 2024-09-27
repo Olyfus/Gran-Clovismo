@@ -1,7 +1,7 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
-import { catchError, tap,map } from 'rxjs/operators';
+import {Injectable} from '@angular/core';
+import {HttpClient} from '@angular/common/http';
+import {Observable} from 'rxjs';
+import {catchError, tap, map} from 'rxjs/operators';
 
 
 @Injectable({
@@ -10,24 +10,24 @@ import { catchError, tap,map } from 'rxjs/operators';
 
 export class ApiService {
 
-    host: string = 'http://127.0.0.1';
-    port: number = 3000;
-    root_host: string = this.host+':'+this.port.toString()
-    client: HttpClient;
+  host: string = 'http://127.0.0.1';
+  port: number = 3000;
+  root_host: string = this.host + ':' + this.port.toString()
+  client: HttpClient;
 
-    constructor(
-        private http: HttpClient
-    ) {
-      this.client = http;
-    }
+  constructor(
+    private http: HttpClient
+  ) {
+    this.client = http;
+  }
 
-    getHello(): Observable<any> {
-        // Le Client http, Utilise la méthode Get pour API, chemin de l'API pour la méthode, mappe tout les objet
+  getHello(): Observable<any> {
+    // Le Client http, Utilise la méthode Get pour API, chemin de l'API pour la méthode, mappe tout la data renvoyé
 
-      console.log(this.client.get(`${this.root_host}/user/`));
-      return this.http.get(`${this.root_host}/`)
-          .pipe(map((data) =>
-            data));
-    }
+    console.log(this.client.get(`${this.root_host}/user/`));
+    return this.http.get(`${this.root_host}/`)
+      .pipe(map((data) =>
+        data));
+  }
 
 }
