@@ -57,7 +57,7 @@ export class AuthComponent {
 
   changeLoginPassword(event: any) {
     this.data_login.password = event.target.value
-    console.log(this.data_login.password)
+    //console.log(this.data_login.password)
   }
 
   onSubmitLogin(event: Event) {
